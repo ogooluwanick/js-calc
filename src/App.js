@@ -10,7 +10,9 @@ function App() {
         const [currentVal, setCurrentVal] = useState("0")
         const [prevVal, setPrevVal] = useState("0")
         const [formula, setFormula] = useState("")
+        // eslint-disable-next-line
         const [currentSign, setCurrentSign] = useState("pos")
+        // eslint-disable-next-line
         const [lastClicked, setLastClicked] = useState("")
         const [evaluated, setEvaluated] = useState(false)
 
@@ -27,6 +29,7 @@ function App() {
                                 expression = expression.slice(0, -1);
                         }
                         expression = expression.replace(/x/g, '*').replace(/‑/g, '-').replace('--', '+0+0+0+0+0+0+');
+                        // eslint-disable-next-line
                         let answer = Math.round(1000000000000 * eval(expression)) / 1000000000000;
                         if (answer.toString()==="NaN"){ setTimeout(()=>{initialize()},2000)}
                         setCurrentVal(answer.toString())
@@ -43,7 +46,6 @@ function App() {
                         setEvaluated(false)
                         if (evaluated) {
                                 setFormula(prevVal + val) 
-                                
                         }
                         else if (!endsWithOperator.test(formula)) {
                                 setPrevVal(formula)
