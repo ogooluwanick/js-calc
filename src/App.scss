@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Share+Tech+Mono&display=swap');
+@import url("//db.onlinewebfonts.com/c/58045dabdc3a361cb9bb9faf2f1dd1f3?family=Digital-7");
+
+$primarycolor:#313bac;
+
+@font-face {font-family: "Digital-7"; src: url("//db.onlinewebfonts.com/t/58045dabdc3a361cb9bb9faf2f1dd1f3.eot"); src: url("//db.onlinewebfonts.com/t/58045dabdc3a361cb9bb9faf2f1dd1f3.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/58045dabdc3a361cb9bb9faf2f1dd1f3.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/58045dabdc3a361cb9bb9faf2f1dd1f3.woff") format("woff"), url("//db.onlinewebfonts.com/t/58045dabdc3a361cb9bb9faf2f1dd1f3.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/58045dabdc3a361cb9bb9faf2f1dd1f3.svg#Digital-7") format("svg"); }
+
+*{
+        font-family: 'Share Tech Mono', monospace;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        scroll-behavior: smooth;
+        user-select: none;
+        a, button{
+                cursor: pointer;
+        }
+}
+
+body{
+        background-color: lighten( $primarycolor ,45%);
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.App{
+       
+}
+
+.cal{
+        background-color: #0e0e10;
+        height: 30rem;
+        width: 22rem;
+        padding: 5px;
+        outline: 2px solid #47476b;
+        color: #E3EBF8;
+}
+
+.formulaScreen{
+        min-height: 25px;
+        font-size: 25px;
+        font-family: 'Digital-7', "arial";
+        color: orange;
+        text-align: right;
+        line-height: 25px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+}
+
+.outputScreen{
+        min-height: 40px;
+        font-size: 39px;
+        font-family: 'Digital-7', "arial";
+        text-align: right;
+        line-height: 40px;
+}
+
+.btn-holder{
+        height: 86%;
+        width:21rem;
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+        "clear clear . ."
+        ". . . ."
+        ". . . ."
+        ". . . eq"
+        "zero zero . eq"; 
+        
+        .jumbo {
+                grid-area: clear; width: 100%; 
+                background-color: rgb(172, 57, 57 );
+                &:hover{
+                        background-color:lighten(rgb(172, 57, 57 ),5%)  ;
+
+                }
+        }
+        #zero { grid-area: zero; width: 100%; }
+        #equals { 
+                grid-area: eq; 
+                height: 100%; 
+                background-color: rgb(0, 68, 102);
+                &:hover{
+                        background-color:lighten(rgb(0, 68, 102),5%)  ;
+                }
+        }
+        #divide,#multiply,#subtract,#add{
+                background-color: rgb(102, 102, 102);
+                &:hover{
+                        background-color:lighten(rgb(102, 102, 102),5%)  ;
+                }
+        }
+
+        button{
+                position: relative;
+                width: 85.5px;
+                height: 80.84px;
+                color: white;
+                outline: 1px solid black;
+                border: none;
+                background: #4d4d4d;
+                font-family: "Share Tech Mono", monospace;
+                font-size: 20px;
+                cursor: default;
+
+                &:hover {
+                        color: black;
+                        background-color:lighten(#4d4d4d ,5%)  ;
+                        outline: 0.05em solid grey;
+                        z-index: 3;
+                }
+        }
+}
+
+
+.credits{
+        text-align: center;
+        margin-top: 20px;
+        transition: all .2s ease-in-out;
+
+        a{
+                text-decoration: none;
+                color:  lighten(blue,25%);
+                line-height: 26px;
+                transition: all .2s ease-in-out;
+                display: block;
+        }
+
+        &:hover{
+                a{
+                transform: translateY(8px);
+                background-color: #fff;
+                }
+        }
+}
